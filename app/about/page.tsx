@@ -12,43 +12,54 @@ export default function AboutPage() {
       </section>
 
       {/* Content */}
-      <section className="py-24">
+      <section className="py-20 md:py-24">
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-          <div className="prose prose-lg prose-headings:font-light prose-headings:text-primary prose-a:text-accent max-w-none">
-            <h2>Our Story</h2>
-            <p className="text-charcoal/80">
-              Founded in Ahmedabad, Gujarat, Aurora Laminates was established with a singular vision: to provide architects, interior designers, and homeowners with a curated selection of premium decorative surfaces that elevate interior spaces. 
-            </p>
-            <p className="text-charcoal/80">
-              We understand that the right material can transform a space. Our showroom serves as a tactile library of possibilities, showcasing everything from ultra-matte solid colors to hyper-realistic woodgrains and luxurious metallic finishes.
-            </p>
+          <div className="space-y-16">
+            {/* Story */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-light text-primary mb-6">Our Story</h2>
+              <div className="space-y-4 text-charcoal/80 text-lg leading-relaxed">
+                <p>
+                  Founded in Ahmedabad, Gujarat, Aurora Laminates was established with a singular vision: to provide architects, interior designers, and homeowners with a curated selection of premium decorative surfaces that elevate interior spaces. 
+                </p>
+                <p>
+                  We understand that the right material can transform a space. Our showroom serves as a tactile library of possibilities, showcasing everything from ultra-matte solid colors to hyper-realistic woodgrains and luxurious metallic finishes.
+                </p>
+              </div>
+            </div>
             
-            <h2 className="mt-12">Quality Commitment</h2>
-            <p className="text-charcoal/80">
-              We partner with industry-leading manufacturers to bring you laminates that are not just visually stunning, but engineered for performance. Our materials are selected for their durability, scratch resistance, and color fastness, ensuring your spaces look beautiful for years to come.
-            </p>
+            {/* Quality */}
+            <div className="border-t border-secondary/30 pt-16">
+              <h2 className="text-3xl md:text-4xl font-light text-primary mb-6">Quality Commitment</h2>
+              <p className="text-charcoal/80 text-lg leading-relaxed">
+                We partner with industry-leading manufacturers to bring you laminates that are not just visually stunning, but engineered for performance. Our materials are selected for their durability, scratch resistance, and color fastness, ensuring your spaces look beautiful for years to come.
+              </p>
+            </div>
 
-            <h2 className="mt-12">Our Approach</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-white p-8 border border-secondary/30">
-                <div className="text-4xl font-light text-secondary mb-4">01</div>
-                <h3 className="text-xl font-medium text-primary mb-2">Understand Your Project</h3>
-                <p className="text-sm text-charcoal/70">We begin by understanding your design goals, application requirements, and aesthetic preferences.</p>
-              </div>
-              <div className="bg-white p-8 border border-secondary/30">
-                <div className="text-4xl font-light text-secondary mb-4">02</div>
-                <h3 className="text-xl font-medium text-primary mb-2">Explore Materials</h3>
-                <p className="text-sm text-charcoal/70">Navigate our curated collections to discover finishes that align with your vision.</p>
-              </div>
-              <div className="bg-white p-8 border border-secondary/30">
-                <div className="text-4xl font-light text-secondary mb-4">03</div>
-                <h3 className="text-xl font-medium text-primary mb-2">Compare Finishes</h3>
-                <p className="text-sm text-charcoal/70">See and touch the actual materials in our showroom under different lighting conditions.</p>
-              </div>
-              <div className="bg-white p-8 border border-secondary/30">
-                <div className="text-4xl font-light text-secondary mb-4">04</div>
-                <h3 className="text-xl font-medium text-primary mb-2">Bring Design to Life</h3>
-                <p className="text-sm text-charcoal/70">Finalize your selection and let our premium surfaces define your beautiful space.</p>
+            {/* Approach */}
+            <div className="border-t border-secondary/30 pt-16">
+              <h2 className="text-3xl md:text-4xl font-light text-primary mb-8">Our Approach</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 border border-secondary/30 shadow-sm">
+                  <div className="text-4xl font-light text-accent mb-4">01</div>
+                  <h3 className="text-xl font-medium text-primary mb-2">Understand Your Project</h3>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">We begin by understanding your design goals, application requirements, and aesthetic preferences.</p>
+                </div>
+                <div className="bg-white p-8 border border-secondary/30 shadow-sm">
+                  <div className="text-4xl font-light text-accent mb-4">02</div>
+                  <h3 className="text-xl font-medium text-primary mb-2">Explore Materials</h3>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">Navigate our curated collections to discover finishes that align with your vision.</p>
+                </div>
+                <div className="bg-white p-8 border border-secondary/30 shadow-sm">
+                  <div className="text-4xl font-light text-accent mb-4">03</div>
+                  <h3 className="text-xl font-medium text-primary mb-2">Compare Finishes</h3>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">See and touch the actual materials in our showroom under different lighting conditions.</p>
+                </div>
+                <div className="bg-white p-8 border border-secondary/30 shadow-sm">
+                  <div className="text-4xl font-light text-accent mb-4">04</div>
+                  <h3 className="text-xl font-medium text-primary mb-2">Bring Design to Life</h3>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">Finalize your selection and let our premium surfaces define your beautiful space.</p>
+                </div>
               </div>
             </div>
           </div>

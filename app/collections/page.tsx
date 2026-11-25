@@ -15,18 +15,26 @@ export default function CollectionsPage() {
       <div className="container mx-auto px-6 md:px-12 mt-16">
         <div className="space-y-24">
           {collections.map((collection, index) => (
-            <div key={collection.id} id={collection.id} className={`flex flex-col md:flex-row gap-12 items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-              <div className="w-full md:w-1/2 relative aspect-[4/3] bg-secondary/10 overflow-hidden">
+            <div 
+              key={collection.id} 
+              id={collection.id} 
+              className={`scroll-mt-28 flex flex-col md:flex-row gap-8 lg:gap-16 items-center ${
+                index % 2 !== 0 ? 'md:flex-row-reverse' : ''
+              }`}
+            >
+              <div className="w-full md:w-1/2 relative aspect-[4/3] bg-secondary/10 border border-secondary/30 overflow-hidden shadow-sm">
                 {collection.image && (
                   <Image 
                     src={collection.image}
                     alt={collection.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 )}
               </div>
               <div className="w-full md:w-1/2">
+                <div className="text-xs font-semibold tracking-widest text-accent uppercase mb-2">Collection 0{index + 1}</div>
                 <h2 className="text-3xl font-light text-primary mb-4">{collection.name}</h2>
                 <p className="text-charcoal/70 text-lg mb-8 leading-relaxed max-w-lg">
                   {collection.description}
@@ -35,7 +43,7 @@ export default function CollectionsPage() {
                   href={`/laminates?collection=${collection.id}`}
                   className="inline-block border border-primary text-primary px-6 py-3 text-sm font-medium hover:bg-primary hover:text-background transition-colors"
                 >
-                  Explore Products
+                  Explore Products →
                 </Link>
               </div>
             </div>

@@ -104,21 +104,28 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {collections.slice(0, 8).map((collection) => (
               <Link 
                 key={collection.id} 
                 href={`/collections#${collection.id}`}
-                className="group block relative overflow-hidden bg-background aspect-square"
+                className="group block relative overflow-hidden bg-background aspect-square rounded-sm border border-secondary/30 shadow-sm"
               >
-                <div className="absolute inset-0 bg-charcoal/5 group-hover:bg-transparent transition-colors z-10" />
-                {/* Fallback color if image is missing */}
-                <div className="absolute inset-0 bg-secondary/30" /> 
+                {collection.image && (
+                  <Image
+                    src={collection.image}
+                    alt={collection.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent z-10" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6 z-20">
-                  <h3 className="text-xl font-medium text-primary mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-xl font-medium text-background mb-1 group-hover:text-accent transition-colors">
                     {collection.name}
                   </h3>
-                  <p className="text-sm text-charcoal/70 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <p className="text-sm text-background/80 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     Explore Collection →
                   </p>
                 </div>
@@ -153,7 +160,14 @@ export default function Home() {
             {products.slice(0, 3).map((product) => (
               <div key={product.id} className="group">
                 <div className="relative aspect-[4/3] mb-4 overflow-hidden bg-secondary/20">
-                  {/* Placeholder for product image */}
+                  {product.image && (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-primary">{product.name}</h3>
@@ -193,13 +207,20 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {applications.slice(0, 3).map((app) => (
-              <div key={app.id} className="group cursor-pointer">
+              <Link key={app.id} href="/applications" className="group cursor-pointer block">
                 <div className="relative aspect-video overflow-hidden mb-4 bg-secondary/20">
-                  {/* Placeholder */}
+                  {app.image && (
+                    <Image
+                      src={app.image}
+                      alt={app.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
                 </div>
-                <h3 className="text-xl font-medium text-primary mb-2">{app.name}</h3>
+                <h3 className="text-xl font-medium text-primary mb-2 group-hover:text-accent transition-colors">{app.name}</h3>
                 <p className="text-charcoal/70 text-sm leading-relaxed">{app.description}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

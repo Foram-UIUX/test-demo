@@ -16,28 +16,33 @@ export default function ProjectsPage() {
       <div className="container mx-auto px-6 md:px-12 mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="group cursor-pointer">
-              <div className="relative aspect-[4/3] overflow-hidden mb-6 bg-secondary/20">
-                {project.image && (
-                  <Image 
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                )}
+            <div key={project.id} className="group bg-white border border-secondary/30 p-6 shadow-sm hover:border-primary transition-colors flex flex-col justify-between">
+              <div>
+                <div className="relative aspect-[4/3] overflow-hidden mb-6 bg-secondary/20 border border-secondary/20">
+                  {project.image && (
+                    <Image 
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                </div>
+                <h2 className="text-xl font-medium text-primary mb-2">{project.name}</h2>
+                <div className="flex flex-col text-sm text-charcoal/60 space-y-1 mb-6">
+                  <span><strong className="font-medium text-charcoal/80">Location:</strong> {project.location}</span>
+                  <span><strong className="font-medium text-charcoal/80">Application:</strong> {project.application}</span>
+                </div>
               </div>
-              <h2 className="text-xl font-medium text-primary mb-2">{project.name}</h2>
-              <div className="flex flex-col text-sm text-charcoal/60 space-y-1 mb-4">
-                <span>Location: {project.location}</span>
-                <span>Application: {project.application}</span>
+              <div>
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors"
+                >
+                  View Project Details <ArrowRight size={16} className="ml-2" />
+                </Link>
               </div>
-              <Link 
-                href="/contact"
-                className="inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors"
-              >
-                View Project Details <ArrowRight size={16} className="ml-2" />
-              </Link>
             </div>
           ))}
         </div>
